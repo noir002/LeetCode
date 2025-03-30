@@ -1,0 +1,28 @@
+
+Vectors:
+
+-array like
+-dynamic in nature, not fixed size
+-standard template library(stl)
+
+stl: vectors, queue, stack, set..etc.
+
+syntax: #include<vector>
+1. vector<int> vec;
+2. vector<int> vec = {1,2,3}
+3. vector<int> vec(size,value_at_index)
+
+
+for each loop: 
+    for(int val: vec){
+        ---;
+    }
+
+vector fcns:
+
+1. vec.size()
+2. vec.push_back()  //Element added at the last of vector array
+3. vec.pop_back()   //Delete Element fromthe last
+4. vec.front()      //Gives first value from vector array
+5. vec.back()       //Gives last value from vector array
+6. vec.at(index)    //access values at given index

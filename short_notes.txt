@@ -1,0 +1,34 @@
+                                                      DAY1:
+
+Arrays:
+to fnd size of arrays-->  sizeof(arr_name)/sizeof(datatype)...
+the term size of arr gives total size(including value of datatype...like 4 for int) off array. 
+
+
+find minimum/maximum in array using loops:
+1. define a variable int var = int_max/int_min (i.e. +infinity/ -infinity)
+2. then in loop compare arr[i] with var as per requirement .
+3. if it satisfys the condt. ; then update var with that value and keep the loop runnng till end.
+4 print the final value of var at the end of loop.
+
+alternative:  
+use max/min fcn---
+syntax: var = max(value1, value2);
+
+
+in cpp, pass by refrence mein original mein change hota hai , because wo aaddress pass ho jata hai and usi block mein jaakr use change krte hain
+pass by value mein original variable/data ki copy bn jaati hai aur jo change hota hai, wo us copy mein hota hia and main data mein koi change nhi aata.
+
+
+Linear Search:
+1. Loop chalao, agar given index par value target value k equal hui to theek, then print, otherwise continue
+2. If not find, then return -1(i.e index does not exist)
+Time Complexity: O(n)
+
+
+Reverse an array(in orignal array):
+1. Two pointer logic --+>
+a. take two pointers at start and end.
+b. use swap(--;--) and swap the values at start and end.
+c. then (start++) and (end = end - 1).
+d. stop swapping when start>end(in case of even no. of n) or start = end(in case of odd no. of n)
