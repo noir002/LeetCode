@@ -26,3 +26,29 @@ vector fcns:
 4. vec.front()      //Gives first value from vector array
 5. vec.back()       //Gives last value from vector array
 6. vec.at(index)    //access values at given index
+
+
+Static memory:
+- Compile Time
+- In stack
+- eg: Arrays
+
+
+Dynamic memory:
+- Run Time
+- In heap
+- eg: Vectors
+
+On each addition, capacity of vector is doubled.
+
+vec.size()---for size
+vec.capacity()---for capacity
+
+
+
+
+
+Single Number:
+
+
+

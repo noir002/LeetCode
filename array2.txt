@@ -1,0 +1,4 @@
+Maxinum Subarray Sum:
+
+- continuous part of a array(sub parts)
+- total no. of subarrays (n*(n-1))/2
