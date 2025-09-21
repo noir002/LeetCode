@@ -1,62 +1,54 @@
 class Solution {
 public:
-    int lb(vector<int>&nums, int target){
-        int n = nums.size();
-        int l = 0;
-        int r = n -1;
-        int ans = n;
-        while(l<=r){
-            int mid = l +(r-l)/2;
-            if(target <= nums[mid]){
-                ans = mid;
-                r = mid -1;
+    int FirstOccuring(vector<int> &nums, int n, int k)
+    {
+        int low = 0, high = n-1;
+        int first = -1;
+        while(low <= high)
+        {
+            int mid = low + (high - low)/2;
+            if(nums[mid]==k)
+            {
+                first = mid;
+                high = mid - 1;
             }
-            else{
-                l = mid +1;
-            }
-
-        }
-
-        return ans;
-    }
-
-int ub(vector<int>&nums, int target){
-        int n = nums.size();
-        int l = 0;
-        int r = n -1;
-        int ans = n;
-        while(l<=r){
-            int mid = l +(r-l)/2;
-            if(target < nums[mid]){
-                ans = mid;
-                r = mid -1;
-            }
-            else{
-                l = mid +1;
-            }
-
-        }
-
-        return ans;
-    }
-
-
-    vector<int> searchRange(vector<int>& nums, int target) {
-        
-        int lbound = lb(nums,target);
-        int ubound = ub(nums,target);
-
-        if(lbound == ubound){
-            return {-1,-1};
-
-        }
+            else if(nums[mid] < k){
+                 low = mid + 1;
+            } 
         else{
-            return {lbound,ubound-1};
+            high =  mid - 1;
         }
-
-
-
-
-        
+     }
+        return first;
     }
+    int LastOccuring(vector<int> &nums, int n, int k)
+    {
+        int low = 0, high = n-1;
+        int last = -1;
+        while(low <= high)
+        {
+             int mid = low + (high - low)/2;
+            if(nums[mid]==k)
+            {
+                last = mid;
+              low = mid + 1;
+            }
+            else if(nums[mid] < k) {
+                low = mid +1;
+            }
+            else {
+               high = mid - 1;
+            }
+        }
+        return last;
+    }
+    
+    vector<int> searchRange(vector<int>& nums,int k) 
+    {
+        int n = nums.size();
+        int first = FirstOccuring(nums, n, k);
+        if(first == -1) return {-1, -1};
+        int last = LastOccuring(nums, n, k);
+        return {first , last};
+        }
 };
