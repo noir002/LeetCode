@@ -11,7 +11,7 @@ public:
                 {
                     rmp[i][board[i][j]]++;
                     cmp[j][board[i][j]]++;
-                    if(rmp[i][board[i][j]]>1 |cmp[j][board[i][j]]>1 )
+                    if(rmp[i][board[i][j]]>1 ||cmp[j][board[i][j]]>1 )
                     return false;
                 }
             }
