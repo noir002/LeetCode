@@ -7,14 +7,14 @@ public:
         while (n>1){
             if (x[0]==0){
                 x>>=1;
-                n--;//Decrease the effective length of x
+                n--;
             }
-            else{// Handel x++
+            else{
                 int i=0;
                 for( ; i<n && x[i]==1; i++)
                     x[i]=0;
                 if (i<n) x[i]=1;
-                else n++;//Increment the length if carry overflows
+                else n++;
             }
             cnt++;
         }
