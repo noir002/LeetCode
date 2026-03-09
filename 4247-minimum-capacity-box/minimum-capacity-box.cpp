@@ -5,7 +5,7 @@ public:
 
         int n = capacity.size();
 
-        int minCap = INT_MAX;
+        int minCap = 101;
         
 
         for(int i = 0; i < n; i++){
@@ -14,7 +14,7 @@ public:
             }
         }
 
-        if(minCap == INT_MAX){
+        if(minCap == 101){
             return -1;
         }
 
