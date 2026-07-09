@@ -11,27 +11,24 @@
  */
 class Solution {
 public:
-    
-        TreeNode* prev = NULL;
+TreeNode* prev = NULL;
     bool isValidBST(TreeNode* root) {
 
         if(root == NULL){
             return true;
         }
-    
 
-        if(!isValidBST(root->left)) return false;
-
-
-
-        if(prev != NULL && prev->val >= root -> val){
+        if(!isValidBST(root->left)){
             return false;
         }
+
+        if(prev != NULL && prev->val >= root->val){
+            return false;
+        }
+
         prev = root;
 
         return isValidBST(root->right);
-
-
-
+        
     }
 };
