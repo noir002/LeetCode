@@ -19,7 +19,7 @@ public:
             for(int j = 0; j<n; j++){
                 if(isConnected[i][j] == 1){
                     lsit[i].push_back(j);
-                    
+                    lsit[j].push_back(i);
                 }
             }
         }
