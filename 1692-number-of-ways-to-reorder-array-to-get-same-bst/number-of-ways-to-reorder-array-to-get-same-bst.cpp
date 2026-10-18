@@ -3,20 +3,20 @@ public:
     int numOfWays(vector<int>& nums) {
         const long long MOD = 1e9 + 7;
         int n = nums.size();
-        vector<int> born(n + 2, -1);  // insertion time of each value; the walls 0 and n + 1 come before everything
+        vector<int> born(n + 2, -1);  
         for (int i = 0; i < n; ++i) born[nums[i]] = i;
 
-        long long fact = 1, sizes = 1;  // n! and the product of subtree sizes, mod p
+        long long fact = 1, sizes = 1;  
         for (int k = 2; k <= n; ++k) fact = fact * k % MOD;
-        vector<int> stack = {0};  // values with increasing insertion times
+        vector<int> stack = {0};  
         for (int v = 1; v <= n + 1; ++v) {
-            while (born[stack.back()] > born[v]) {  // v is the right wall of the value on top
+            while (born[stack.back()] > born[v]) {  
                 stack.pop_back();
-                sizes = sizes * (v - stack.back() - 1) % MOD;  // and the value below it is the left wall
+                sizes = sizes * (v - stack.back() - 1) % MOD; 
             }
             stack.push_back(v);
         }
-        return (fact * power(sizes, MOD - 2, MOD) - 1 + MOD) % MOD;  // n! / sizes - 1
+        return (fact * power(sizes, MOD - 2, MOD) - 1 + MOD) % MOD; 
     }
 
 private:
